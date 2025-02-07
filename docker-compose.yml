@@ -1,0 +1,38 @@
+version: "3"
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres13:/var/lib/postgresql/data
+  web:
+    
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    command: bundle exec rails server -b 0.0.0.0
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/rails
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgresql://postgres:password@db:5432/startamus_web_1_development
+  test:
+    build: .
+    command: bundle exec rspec
+    volumes:
+      - .:/rails
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgresql://postgres:password@db:5432/startamus_web_1_test
+      RAILS_ENV: test
+volumes:
+  postgres13:
