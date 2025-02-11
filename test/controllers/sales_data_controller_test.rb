@@ -1,6 +1,7 @@
 require "test_helper"
 
 class SalesDataControllerTest < ActionDispatch::IntegrationTest
+ 
   test "GET root => SalesData#index" do
     assert_routing({method: 'get', path: '/'}, {controller: 'sales_data', action: 'index'})
   end

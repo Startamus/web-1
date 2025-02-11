@@ -9,17 +9,16 @@
 * System dependencies
 
 ```
-- Docker with docker engine
+Docker with docker engine
 ```
 
-* Configuration
+* Configuration/Setup
 
 ```
 docker compose build
-docker compose up db
-bundle exec rake db:create:all
-bundle exec rake db:migrate
-bundle exec rake db:test:prepare
+docker compose run web rake db:create:all
+docker compose run web rake db:migrate
+docker compose run web rake db:test:prepare
 ```
 
 * Run tests
