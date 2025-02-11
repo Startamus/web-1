@@ -1,3 +1,5 @@
+require 'csv'
+
 class SalesDataParser
   def initialize(file_path)
     @path = file_path

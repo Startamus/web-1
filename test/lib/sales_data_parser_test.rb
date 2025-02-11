@@ -1,5 +1,4 @@
 require "test_helper"
-require 'csv'
 
 class SalesDataParserTest < ActiveSupport::TestCase
   def parser
