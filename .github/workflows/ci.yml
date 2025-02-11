@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - actions-test
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Compose
+        run: |
+          docker compose version
+
+      - name: Build Docker images
+        run: docker compose build
+
+      - name: Set up database
+        run: |
+          docker compose run test bundle exec rake db:create
+          docker compose run test bundle exec rake db:test:prepare
+
+      - name: Run tests
+        run: docker compose run test
