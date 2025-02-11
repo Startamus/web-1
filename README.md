@@ -11,14 +11,18 @@ Things you may want to cover:
 
 * Configuration
 
-* Database creation
+* Database setup
 
-* Database initialization
+```
+docker compose up db
+PG_USER=postgres PG_PASS=password bundle exec rake db:create:all
+PG_USER=postgres PG_PASS=password bundle exec rake db:migrate
+PG_USER=postgres PG_PASS=password bundle exec rake db:test:prepare
+```
 
 * How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+docker compose run test
+```
 
-* Deployment instructions
-
-* ...

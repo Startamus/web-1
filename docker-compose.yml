@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  db:
+  postgres:
     image: postgres:16-alpine
     environment:
       - POSTGRES_USER=postgres
@@ -11,7 +11,6 @@ services:
     volumes:
       - postgres13:/var/lib/postgresql/data
   web:
-    
     build: 
       context: .
       dockerfile: Dockerfile.dev
@@ -21,18 +20,20 @@ services:
     volumes:
       - .:/rails
     depends_on:
-      - db
+      - postgres
     environment:
-      DATABASE_URL: postgresql://postgres:password@db:5432/startamus_web_1_development
+      PG_HOST: postgres
   test:
-    build: .
-    command: bundle exec rspec
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    command: bundle exec rake test
     volumes:
       - .:/rails
     depends_on:
-      - db
+      - postgres
     environment:
-      DATABASE_URL: postgresql://postgres:password@db:5432/startamus_web_1_test
       RAILS_ENV: test
+      PG_HOST: postgres
 volumes:
   postgres13:
