@@ -1,0 +1,87 @@
+[
+  {
+    sale: {
+      client: {
+        name: "João Silva"
+      },
+      merchant: {
+        address: "987 Fake St",
+        name: "Bob's Pizza"
+      }
+      item: {
+        description: "Pepperoni Pizza Slice",
+      },
+      price: 10.0, #price moved here b/c of "Cute T-Shirt",
+      qty: 2,
+      total: 20.0
+    }
+  },
+  {
+    sale: {
+      client: {
+        name: "Amy Pond"
+      },
+      merchant: {
+        address: "456 Unreal Rd",
+        name: "Tom's Awesome Shop"
+      }
+      item: {
+        description: "Cute T-Shirt",
+      },
+      qty: 5
+      price: 10.0,
+      total: 50
+    }
+  },
+  {
+    sale: {
+      client: {
+        name: "Marty McFly"
+      },
+      merchant: {
+        address: "123 Fake St",
+        name: "Sneaker Store Emporium"
+      }
+      item: {
+        description: "Cool Sneakers",
+      },
+      qty: 1
+      price: 5.0,
+      total: 5.0
+    }
+  },
+  {
+    sale: {
+      client: {
+        name: "Snake Plissken"
+      },
+      merchant: {
+        address: "123 Fake St",
+        name: "Sneaker Store Emporium"
+      }
+      item: {
+        description: "Cool Sneakers",
+      },
+      qty: 4
+      price: 5.0,
+      total: 20.0
+    }
+  },
+  {
+    sale: {
+      client: {
+        name: "João Silva"
+      },
+      merchant: {
+        address: "456 Unreal Rd",
+        name: "Tom's Awesome Shop"
+      }
+      item: {
+        description: "Cute T-Shirt",
+      },
+      qty: 1
+      price: 7.95,
+      total: 7.95
+    }
+  }
+]

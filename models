@@ -1,0 +1,25 @@
+
+x Items
+  - description
+  has_many :sales
+
+x Merchants
+  - name
+  - address
+  has many :sales
+
+x Clients
+  - name
+  has many :purchases, class: Sale
+
+Sale
+  - qty
+  - total
+  - price
+  belongs to :client
+  belongs to :merchant
+  belongs to :item
+
+  it deduplicates client
+  it deduplicates item
+  it deduplicates merchant

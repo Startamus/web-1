@@ -1,0 +1,8 @@
+
+lib/sales_data_parser.rb
+
+describe initialization
+  it receives a file
+
+describe #parse
+  it returns an array with the parsed sales data

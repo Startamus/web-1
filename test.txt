@@ -33,7 +33,9 @@ description, if any).
 6. Be simple to configure and execute, running on a Unix-compatible envi-
 ronment (Linux or macOS).
 7. Use only free / open-source language and libraries.
+
 Your application doesn’t need to:
+
 1. Deal with authentication or authorization (bonus points if it does, though,
 specially via oAuth).
 2. Be developed with any specific framework (but there’s nothing wrong with
