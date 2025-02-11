@@ -3,6 +3,9 @@ class Sale < ApplicationRecord
   belongs_to :merchant
   belongs_to :client
 
+  validates :price, presence: true
+  validates :quantity, presence: true
+
   before_save :denormalize_total
 
   def self.create_from_sales_data_row!(data)
