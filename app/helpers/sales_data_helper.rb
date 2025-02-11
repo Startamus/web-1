@@ -1,0 +1,2 @@
+module SalesDataHelper
+end

@@ -1,0 +1,11 @@
+<h1>
+  Sales Data Processing
+</h1>
+<%= form_with url: process_sales_data_path, local: false, multipart: true, data: {turbo: false} do |form| %>
+  <p>
+    <%= form.file_field :sales_data %>
+  </p>
+  <p>
+    <%= form.submit "Submit Batch" %>
+  </p>
+<% end %>

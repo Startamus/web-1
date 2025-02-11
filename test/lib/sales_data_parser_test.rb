@@ -2,7 +2,7 @@ require "test_helper"
 
 class SalesDataParserTest < ActiveSupport::TestCase
   def parser
-    SalesDataParser.new("test/fixtures/example_input.tab")
+    SalesDataParser.new("test/fixtures/files/example_input.tab")
   end
 
   test "it has a parse method" do
