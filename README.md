@@ -15,14 +15,14 @@ Things you may want to cover:
 
 ```
 docker compose up db
-PG_USER=postgres PG_PASS=password bundle exec rake db:create:all
-PG_USER=postgres PG_PASS=password bundle exec rake db:migrate
-PG_USER=postgres PG_PASS=password bundle exec rake db:test:prepare
+bundle exec rake db:create:all
+bundle exec rake db:migrate
+bundle exec rake db:test:prepare
 ```
 
 * How to run the test suite
 
 ```
-docker compose run test
+docker compose run --remove-orphans test
 ```
 
